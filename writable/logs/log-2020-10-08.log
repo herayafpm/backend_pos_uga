@@ -1,0 +1,219 @@
+CRITICAL - 2020-10-08 05:03:11 --> Undefined variable: registerRule
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(36): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->login()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-08 05:16:58 --> Too few arguments to function config(), 0 passed in /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php on line 41 and at least 1 expected
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(41): config()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->login()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-08 05:17:38 --> Trying to get property 'appJWTKey' of non-object
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(42): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->login()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-08 05:18:06 --> Trying to access array offset on value of type null
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(42): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->login()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-08 05:20:24 --> Class 'App\Controllers\JWT' not found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->login()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-08 05:24:55 --> Declaration of App\Filters\AuthApiFilter::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = NULL)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-10-08 05:25:42 --> Class 'App\Filters\AuthApiFilter' not found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#4 {main}
+CRITICAL - 2020-10-08 05:25:54 --> Call to undefined method CodeIgniter\HTTP\IncomingRequest::headers()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-08 05:38:45 --> Class 'App\Filters\Services' not found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-08 05:38:57 --> Class 'Services' not found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-08 05:39:33 --> Declaration of App\Filters\AuthApiFilter::before(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, $arguments = NULL) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = NULL)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-10-08 05:42:55 --> json_decode() expects parameter 1 to be string, array given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(14): json_decode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-08 05:43:04 --> json_decode() expects parameter 1 to be string, array given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(14): json_decode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-08 05:45:43 --> Class 'App\Filters\JWT' not found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-08 05:45:59 --> Undefined variable: jwt
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(20): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-08 05:47:26 --> Unexpected control character found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(299): Firebase\JWT\JWT::handleJsonError()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(86): Firebase\JWT\JWT::jsonDecode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(22): Firebase\JWT\JWT::decode()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#8 {main}
+CRITICAL - 2020-10-08 05:47:58 --> Unexpected control character found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(299): Firebase\JWT\JWT::handleJsonError()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(86): Firebase\JWT\JWT::jsonDecode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(22): Firebase\JWT\JWT::decode()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#8 {main}
+CRITICAL - 2020-10-08 05:48:07 --> Unexpected control character found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(299): Firebase\JWT\JWT::handleJsonError()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(86): Firebase\JWT\JWT::jsonDecode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(22): Firebase\JWT\JWT::decode()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#8 {main}
+CRITICAL - 2020-10-08 05:49:14 --> Unexpected control character found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(299): Firebase\JWT\JWT::handleJsonError()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(86): Firebase\JWT\JWT::jsonDecode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(22): Firebase\JWT\JWT::decode()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#8 {main}
+CRITICAL - 2020-10-08 05:49:57 --> Unexpected control character found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(299): Firebase\JWT\JWT::handleJsonError()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(86): Firebase\JWT\JWT::jsonDecode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(22): Firebase\JWT\JWT::decode()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#8 {main}
+CRITICAL - 2020-10-08 05:50:03 --> Unexpected control character found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(299): Firebase\JWT\JWT::handleJsonError()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(86): Firebase\JWT\JWT::jsonDecode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(22): Firebase\JWT\JWT::decode()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#8 {main}
+CRITICAL - 2020-10-08 05:50:28 --> Unexpected control character found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(299): Firebase\JWT\JWT::handleJsonError()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(86): Firebase\JWT\JWT::jsonDecode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(22): Firebase\JWT\JWT::decode()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#8 {main}
+CRITICAL - 2020-10-08 05:51:22 --> Cannot access protected property CodeIgniter\HTTP\Header::$value
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-08 05:52:35 --> Unexpected control character found
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(299): Firebase\JWT\JWT::handleJsonError()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(86): Firebase\JWT\JWT::jsonDecode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(23): Firebase\JWT\JWT::decode()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#8 {main}
+CRITICAL - 2020-10-08 05:53:02 --> Syntax error, malformed JSON
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(299): Firebase\JWT\JWT::handleJsonError()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(86): Firebase\JWT\JWT::jsonDecode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(23): Firebase\JWT\JWT::decode()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#8 {main}
+CRITICAL - 2020-10-08 05:53:09 --> Syntax error, malformed JSON
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(299): Firebase\JWT\JWT::handleJsonError()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/vendor/firebase/php-jwt/src/JWT.php(86): Firebase\JWT\JWT::jsonDecode()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Filters/AuthApiFilter.php(22): Firebase\JWT\JWT::decode()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#8 {main}
+CRITICAL - 2020-10-08 06:05:32 --> Call to undefined function Exception()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Filters/Filters.php(173): App\Filters\AuthApiFilter->before()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(382): CodeIgniter\Filters\Filters->run()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}

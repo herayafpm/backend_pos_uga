@@ -1,0 +1,139 @@
+CRITICAL - 2020-10-14 03:38:41 --> Undefined property: stdClass::$ayah
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(64): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-14 03:42:30 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::where()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-14 03:42:54 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::first()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-14 03:43:09 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::first()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-14 03:43:23 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::getRowResult()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-14 03:50:40 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::insertID()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-14 03:58:28 --> Undefined property: stdClass::$kebutuhan_perawatan
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(117): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-14 04:02:09 --> Undefined property: stdClass::$parents
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-14 04:38:34 --> Undefined variable: db
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(62): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-14 04:56:54 --> unlink(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/uploads/img_5f86221501d011602626069_81.png): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(144): unlink()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->delete()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-14 04:56:59 --> unlink(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/uploads/img_5f86223605bcd1602626102_61.png): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(144): unlink()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->delete()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-14 04:59:05 --> unlink(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/uploads/img_5f862322365391602626338_42.png): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(144): unlink()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->delete()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-14 05:00:37 --> unlink(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/uploads/img_5f862368e35e31602626408_74.png): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(144): unlink()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->delete()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-14 05:01:39 --> unlink(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/uploads/img_5f8623b1970ea1602626481_88.png): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(144): unlink()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->delete()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-14 05:03:53 --> unlink(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/uploads/img_5f86242b642dd1602626603_63.png): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(144): unlink()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->delete()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-14 05:07:32 --> unlink(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/uploads/img_5f86248b6afd11602626699_89.png): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(144): unlink()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->delete()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-14 05:10:38 --> unlink(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/uploads/img_5f8625ca191c81602627018_70.png): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(144): unlink()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->delete()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}

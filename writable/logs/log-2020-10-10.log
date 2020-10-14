@@ -1,0 +1,192 @@
+CRITICAL - 2020-10-10 04:53:42 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::save()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/Seeder.php(174): App\Database\Seeds\UserSeeder->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Database/Seed.php(124): CodeIgniter\Database\Seeder->call()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CLI/Commands.php(100): CodeIgniter\Commands\Database\Seed->run()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CLI/CommandRunner.php(107): CodeIgniter\CLI\Commands->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CLI/CommandRunner.php(85): CodeIgniter\CLI\CommandRunner->index()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(914): CodeIgniter\CLI\CommandRunner->_remap()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CLI/Console.php(86): CodeIgniter\CodeIgniter->run()
+#9 /home/raydragneel/herayaf/codeigniter/gendis_desa/spark(57): CodeIgniter\CLI\Console->run()
+#10 {main}
+CRITICAL - 2020-10-10 05:22:50 --> Undefined variable: data
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(17): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-10 05:31:55 --> Trying to get property 'id' of non-object
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(17): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-10 05:32:16 --> Trying to get property 'id' of non-object
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(17): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-10 05:32:37 --> Undefined variable: parent
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(41): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-10 05:32:45 --> Undefined variable: parent
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(41): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-10 05:33:11 --> Undefined variable: parent
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-10 05:34:13 --> Undefined variable: dataJosn
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-10 05:36:46 --> Duplicate entry '' for key 'no_kk'
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/MySQLi/Connection.php(331): mysqli->query()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseBuilder.php(2249): CodeIgniter\Database\BaseConnection->query()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Model.php(755): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Model.php(574): CodeIgniter\Model->insert()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(41): CodeIgniter\Model->save()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#8 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#9 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#11 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#12 {main}
+CRITICAL - 2020-10-10 05:39:29 --> Duplicate entry '' for key 'no_kk'
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/MySQLi/Connection.php(331): mysqli->query()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseBuilder.php(2249): CodeIgniter\Database\BaseConnection->query()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Model.php(755): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Model.php(574): CodeIgniter\Model->insert()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(41): CodeIgniter\Model->save()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#8 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#9 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#11 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#12 {main}
+CRITICAL - 2020-10-10 05:52:56 --> Call to undefined method App\Controllers\DashboardController::getDifabel()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-10 20:45:45 --> finfo_close() expects exactly 1 parameter, 0 given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(25): finfo_close()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-10 20:48:46 --> in_array() expects parameter 2 to be array, string given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(27): in_array()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-10 20:49:15 --> in_array() expects parameter 2 to be array, string given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(27): in_array()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-10 21:06:35 --> Undefined variable: Image
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(27): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-10 21:09:30 --> file_put_contents(temp/1602338970.jpeg): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(28): file_put_contents()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-10 21:28:16 --> file_put_contents(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/img_5f81c5001fa689.941128141602340096.png): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(26): file_put_contents()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-10 21:29:48 --> file_put_contents(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/img_5f81c55cbec151.2442632740.png): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(26): file_put_contents()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-10 21:30:03 --> file_put_contents(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/img_5f81c56b532ee92.png): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(26): file_put_contents()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-10 21:31:42 --> file_put_contents(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/img_5f81c5ce29f4a77.png): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(26): file_put_contents()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-10 21:32:10 --> file_put_contents(/home/raydragneel/herayaf/codeigniter/gendis_desa/public/uploads/img_5f81c5eab9c2359.png): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/DashboardController.php(26): file_put_contents()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\DashboardController->register()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}

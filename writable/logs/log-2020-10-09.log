@@ -1,0 +1,33 @@
+CRITICAL - 2020-10-09 03:40:49 --> Duplicate entry '330411' for key 'nik'
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/MySQLi/Connection.php(331): mysqli->query()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseBuilder.php(2249): CodeIgniter\Database\BaseConnection->query()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Model.php(755): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Model.php(574): CodeIgniter\Model->insert()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Models/UserModel.php(37): CodeIgniter\Model->save()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(222): App\Models\UserModel->change_pass()
+#8 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->change_pass()
+#9 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#10 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#12 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#13 {main}
+CRITICAL - 2020-10-09 03:41:41 --> There is no data to update.
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Model.php(834): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Models/UserModel.php(37): CodeIgniter\Model->update()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(222): App\Models\UserModel->change_pass()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->change_pass()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#8 {main}
+CRITICAL - 2020-10-09 03:52:20 --> Undefined index: new_password
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(261): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->forgot_pass()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}

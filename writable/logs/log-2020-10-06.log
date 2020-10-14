@@ -1,0 +1,192 @@
+CRITICAL - 2020-10-06 19:56:37 --> Unable to connect to the database.
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseConnection.php(1548): CodeIgniter\Database\BaseConnection->query()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/BaseConnection.php(1591): CodeIgniter\Database\BaseConnection->listTables()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/MigrationRunner.php(945): CodeIgniter\Database\BaseConnection->tableExists()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Database/MigrationRunner.php(193): CodeIgniter\Database\MigrationRunner->ensureTable()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Database/Migrate.php(128): CodeIgniter\Database\MigrationRunner->latest()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CLI/Commands.php(100): CodeIgniter\Commands\Database\Migrate->run()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CLI/CommandRunner.php(107): CodeIgniter\CLI\Commands->run()
+#8 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CLI/CommandRunner.php(85): CodeIgniter\CLI\CommandRunner->index()
+#9 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(914): CodeIgniter\CLI\CommandRunner->_remap()
+#10 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#11 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CLI/Console.php(86): CodeIgniter\CodeIgniter->run()
+#13 /home/raydragneel/herayaf/codeigniter/gendis_desa/spark(57): CodeIgniter\CLI\Console->run()
+#14 {main}
+CRITICAL - 2020-10-06 20:19:33 --> Argument 1 passed to CodeIgniter\Validation\Validation::run() must be of the type array or null, object given, called in /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php on line 28
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(28): CodeIgniter\Validation\Validation->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:20:42 --> Argument 1 passed to CodeIgniter\Validation\Validation::run() must be of the type array or null, object given, called in /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php on line 28
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(28): CodeIgniter\Validation\Validation->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->registrasi()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:21:54 --> Argument 1 passed to CodeIgniter\Validation\Validation::run() must be of the type array or null, object given, called in /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php on line 28
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(28): CodeIgniter\Validation\Validation->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:21:56 --> Argument 1 passed to CodeIgniter\Validation\Validation::run() must be of the type array or null, object given, called in /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php on line 28
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(28): CodeIgniter\Validation\Validation->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:22:01 --> Argument 1 passed to CodeIgniter\Validation\Validation::run() must be of the type array or null, object given, called in /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php on line 28
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(28): CodeIgniter\Validation\Validation->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:22:23 --> Argument 1 passed to CodeIgniter\Validation\Validation::run() must be of the type array or null, object given, called in /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php on line 28
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(28): CodeIgniter\Validation\Validation->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->create()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:22:30 --> Argument 1 passed to CodeIgniter\Validation\Validation::run() must be of the type array or null, object given, called in /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php on line 28
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(28): CodeIgniter\Validation\Validation->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->create()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:25:12 --> Argument 1 passed to CodeIgniter\Validation\Validation::run() must be of the type array or null, object given, called in /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php on line 28
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(28): CodeIgniter\Validation\Validation->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->create()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:33:31 --> syntax error, unexpected ';', expecting ']'
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(869): class_exists()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#9 {main}
+CRITICAL - 2020-10-06 20:34:53 --> min:6 is not a valid rule.
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Validation/Validation.php(333): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Validation/Validation.php(189): CodeIgniter\Validation\Validation->processRules()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Controller.php(219): CodeIgniter\Validation\Validation->run()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(47): CodeIgniter\Controller->validate()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->create()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#9 {main}
+CRITICAL - 2020-10-06 20:35:02 --> min is not a valid rule.
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Validation/Validation.php(333): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Validation/Validation.php(189): CodeIgniter\Validation\Validation->processRules()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Controller.php(219): CodeIgniter\Validation\Validation->run()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(47): CodeIgniter\Controller->validate()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->create()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#9 {main}
+CRITICAL - 2020-10-06 20:41:19 --> Argument 2 passed to CodeIgniter\Validation\Validation::run() must be of the type string or null, array given, called in /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php on line 135
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(135): CodeIgniter\Validation\Validation->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->create()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:43:12 --> htmlspecialchars() expects parameter 1 to be string, array given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(121): htmlspecialchars()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->create()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#7 {main}
+CRITICAL - 2020-10-06 20:46:11 --> Argument 1 passed to CodeIgniter\Validation\Validation::run() must be of the type array or null, object given, called in /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php on line 136
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(136): CodeIgniter\Validation\Validation->run()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->create()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:47:55 --> Undefined property: stdClass::$nik
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->create()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:51:43 --> Undefined property: stdClass::$nik
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(122): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->create()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 20:57:24 --> Undefined property: stdClass::$nik
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(123): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->create()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 21:10:06 --> Call to undefined method CodeIgniter\HTTP\IncomingRequest::getInputRaw()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->register()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-06 21:10:18 --> Call to undefined method CodeIgniter\HTTP\IncomingRequest::getRaw()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->register()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#5 {main}
+CRITICAL - 2020-10-06 21:12:11 --> Undefined variable: request
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(120): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
+CRITICAL - 2020-10-06 21:21:05 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::save()
+#0 /home/raydragneel/herayaf/codeigniter/gendis_desa/app/Controllers/AuthController.php(140): App\Models\UserModel->insertUser()
+#1 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(918): App\Controllers\AuthController->register()
+#2 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#3 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/raydragneel/herayaf/codeigniter/gendis_desa/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/raydragneel/herayaf/codeigniter/gendis_desa/system/Commands/Server/rewrite.php(34): require_once('/home/raydragne...')
+#6 {main}
