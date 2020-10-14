@@ -77,8 +77,6 @@ class DashboardController extends ResourceController
         $dataJson->pendaftar_id = $user['id'];
         // upload file
         $fotoData = base64_decode($dataJson->foto);
-        var_dump($fotoData);
-        die();
         $f = finfo_open();
         $mime_type = finfo_buffer($f, $fotoData, FILEINFO_MIME_TYPE);
         finfo_close($f);
