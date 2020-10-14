@@ -34,10 +34,17 @@ class DifabelModel extends Model
     {
         $parentModel = new \App\Models\ParentModel();
         $difabels = $this->where('pendaftar_id',$id)->orderBy('id','desc')->get($limit,$offset)->getResultArray();
+        $db = \Config\Database::connect();
+        $jenisKelamins = $db->table('jenis_kelamin')->get()->getResultArray();
         $no = 0;
         foreach ($difabels as $difabel) {
-            $ayah = $parentModel->where(["no_kk" => $difabel["no_kk"],"jenis" => 1])->first(); 
-            $ibu = $parentModel->where(['no_kk'=>$difabel['no_kk'],'jenis' => 0])->first(); 
+            foreach ($jenisKelamins as $jenis) {
+                if(strtolower($jenis['nama']) == "laki - laki"){
+                    $ayah = $parentModel->where(["no_kk" => $difabel["no_kk"],"jenis" => $jenis['id']])->first(); 
+                }else if(strtolower($jenis['nama']) == "perempuan"){
+                    $ibu = $parentModel->where(['no_kk'=>$difabel['no_kk'],'jenis' => $jenis['id']])->first(); 
+                }
+            }
             $difabels[$no]['foto'] = "uploads/".$difabel['foto'];
             $difabels[$no]['ayah'] = $ayah;
             $difabels[$no]['ibu'] = $ibu;

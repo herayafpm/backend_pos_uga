@@ -70,7 +70,7 @@ class DashboardController extends ResourceController
             return $data;
         }
     }
-    public function register()
+    function register()
     {
         $user = $this->request->user;
         $dataJson = $this->request->getJson();
@@ -80,6 +80,7 @@ class DashboardController extends ResourceController
         $f = finfo_open();
         $mime_type = finfo_buffer($f, $fotoData, FILEINFO_MIME_TYPE);
         finfo_close($f);
+        // return $this->respond(["status" => true,"message" => "Berhasil","data" => $dataJson], 200); 
         $acceptType = ['image/jpeg','image/png','image/jpg'];
         if(in_array($mime_type,$acceptType)){
             [$image,$imageType] = explode('/',$mime_type);
@@ -88,7 +89,7 @@ class DashboardController extends ResourceController
             $image = file_put_contents($filePath, $fotoData);
             $ImageSize = filesize($filePath) / 1024;
             // Ukuruan maximum file 2MB
-            $maxFotoSize = 2;
+            $maxFotoSize = 10;
             if($ImageSize > $maxFotoSize * 1024){
                 unlink($filePath);
                 return $this->respond(["status" => false,"message" => "Foto harus kurang dari ".$maxFotoSize."MB"], 400); 
@@ -112,11 +113,13 @@ class DashboardController extends ResourceController
                     $parentModel = new \App\Models\ParentModel();
                     $parents = [$dataJson->ayah,$dataJson->ibu];
                     foreach ($parents as $parent) {
+                        unset($parent->id);
                         $p = $parentModel->getParent($parent->nik);
                         if(!$p){
                             $parentModel->save($parent);
                         }
                     }
+                    unset($dataJson->id);
                     $dif = $this->model->insertData($dataJson);
                     if($dif){
                         return $this->respond(["status" => true,"message"=>"Berhasil mengirim data, silahkan tunggu untuk admin memvalidasi data"], 200);  

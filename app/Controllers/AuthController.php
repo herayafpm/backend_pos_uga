@@ -180,11 +180,12 @@ class AuthController extends ResourceController
         if(!$validation->run($data)){
             return $this->respond($validation->getErrors(), 400);
         }
+        $data['status'] = 1;
         $save = $this->model->insertUser($data);
         if($save){
-            return $this->respond(["status" => true], 200);  
+            return $this->respond(["status" => true,"message"=>"Berhasil mendaftar, silahkan login"], 200);  
         }else{
-            return $this->respond(["status" => false], 400); 
+            return $this->respond(["status" => false,"message"=>"Gagal mendaftar"], 400); 
         } 
        
     }
