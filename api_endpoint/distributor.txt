@@ -1,0 +1,438 @@
+<!-- Distributor -->
+GET /distributor
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response When Distributor -->
+{
+    "status": 1,
+    "message": "berhasil mengambil data distributor",
+    "data": {
+        "id": "1",
+        "user_id": "1",
+        "nama_distributor": "distributor heraya",
+        "created_at": "2020-11-02 08:59:30",
+        "updated_at": "2020-11-02 08:59:30",
+        "nama_user": "distributor1"
+    }
+}
+<!-- Edit Distributor -->
+PUT /distributor
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Normal Request -->
+{
+    "nama_distributor":"distributor heraya"
+}
+<!-- Response Without request filled -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "nama_distributor": "Nama Distributor tidak boleh kosong"
+    }
+}
+<!-- Response When Success Request Filled -->
+{
+    "status": 1,
+    "message": "distributor berhasil diubah",
+    "data": []
+}
+
+<!-- Barang -->
+GET /distributor/barang
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response When Success -->
+{
+    "status": 1,
+    "message": "berhasil mengambil data barang",
+    "data": [
+        {
+            "id": "1",
+            "foto": "kosong.png",
+            "nama_barang": "sepeda bmx 2020",
+            "jenis_barang_id": "1",
+            "ukuran_barang_id": "1",
+            "stok": "30",
+            "harga_dasar": "100000",
+            "harga_jual": "150000",
+            "keterangan": "ready gan",
+            "created_at": "2020-11-02 09:18:52",
+            "updated_at": "2020-11-02 09:18:52",
+            "ukuran_barang_nama": "S",
+            "jenis_barang_nama": "sepeda lipat"
+        }
+    ]
+}
+<!-- Create Barang -->
+POST /distributor/barang
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Normal Request -->
+{
+    "nama_barang":"sepeda bmx 2020",
+    "jenis_barang_id":1,
+    "ukuran_barang_id":1,
+    "harga_dasar":100000,
+    "harga_jual":150000,
+    "keterangan":"ready om",
+    "foto":"iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQBAMAAACAGwOrAAAAG1BMVEUAAAD///8fHx9fX1+fn5+/v7/f399/f38/Pz+s+vmyAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAGgklEQVR4nO3bzXPTRhjHcVt+07ELSeBoF+LhiBmgPcYttNe604QeMS20R1zSDMcY2mn+7Eqr1b5oHxmUQ7vOfD+HEP+wY/vxo9VqJfd6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/uPf87PSn90H0z/M3p++mvU9mny27Cm7m52evXzzqfTJLzlOlHf1hk2ypk8NL715S1sFCPfRu3a+e8ufeJ7LkmFoV1bLR0iSH097O7PNlyi/WsH7KH3dnyTlW6tdH0+zB47Ut1lypFx96D54odbu3K+tg7BcrW6vD99Ps48oLpSw5xYv8xfz2p4uqbeG+e+FS1sXSf9jcbMzFln17V5acuTqIozvmt626uyPrIFdhE7218WV7lp5V3ChLG+V2HJOyDubqwj3P0PXOVr1sz5IziZs+93ptYT5vKetidTh2xdqqk/rXQd2wUpacWfzOx94nO1S3WrMOJuqVV6y115pLNW3NkrOMt6mtv98yn7KUdbBVl2NvO/aa2XxYUpacTBitV379TDGlrIP1Qc8Va+SPScPqhpQlZ6h+aEZZMIrN9K5Jyjo9y0uvWDN/l2I+LSlLTj9+34NgSBrrgVfKOlgUg5Ar1iIYktYHbVlyFvEWFTbbRG8SUmblwcPzafQXdV+6Yi0P/f/cHLVlyVnGn+E4GF5z3VNSZq2Cidr2VfQXR2WpXbHWwf5hq3tKypKzjkeHxpapxw8pqw2D8SxXQY9om6OpX6xwRKr+tJSlJlNfRFnjY9WfuZTZvxEcA2xV1Fm5roQtVqMvddNKWXJyPfrk52dv3NrfQgV3WR20ZNax11rFsdC0+STVW7fFGoQf0KjcW0hZciblq/qrWkb6bVpljdFVD71SZvmtJTSWubctVmP3oPcdUpacYfGhH5fLfuvih9m2wkpUdZIyx7WW1Fhm2mGL1aiErpOUJWekHg6UenFZvM0LZV5wYwepJxdS5rjWkhrLzDe9Yp34/z2oihVnyRmry0296P3U7MfCAal4/y2Zp24tqbHqx9piNQakvByupCw5ffXRHhUX/aFbaxUeJlfFEjJP3VpSY9WblFesYFdnihVnyemrhZvSDKu6XaNYprXExtqaJ9j/Ys3U2ptRroXJdDXFkjJf1VpSY2X1Q22xxs3C3JKz5MyU/ypneuS4TrF0a4mNNar3czehWP5+bai7/zqboW4tqbGKHee0+uUmbIb+cV21anWtYhWtdUdqLLc0dROKFfS7XkdqTBMWwtRhEReraC2psdzSV9vUYSBMHQaJFiuYOeuJevdJqTaXGstbgd7/SeksfJG6Y7of7mhb6Uy1N1Lv/+FOXyhW5wNprTzlHJ92n7sC7v+BdKNYekrQeYnGPPR34dy2d8f9X6IZC8XquvinlXOs46i1Jt6Yv/+Lf6Ow33UD9YMGycyycpwFyjlWFrVWX70+ra1U+bO89iqsaXVeTcpS0xgrdLE6n7Do1UeFUWv1VVP5wH09YdEYK/Q4Hp4Prk+FxZmvmrxHrSUXKzyhbU6FCVlqwjPN1XicN06ovm3JPPVRYbO1si+duXpU/CzvFvZN1VNSlpxwv1a91+C6D7PCImV+UA3k8ajluFNhfb/W1akfMUvOxv9EzWr5UrgIRMost9wQ7xAtV6xgmzY3pCw5wRR+XO0bO19y5JYbdrTWDbjkKLgwzVyqPvJmRyOzB5Cymr+O1d5a3sVsK+8ocqXas9Rk3oJWZs5Y+GfgN+YtSlnNX8dqb63gMkk7u7NXaUpZcjbuRc7rLtvYbXNgayRllXCBtLW1vGJN3AWqi/rppSw5I/uNiVy5Faf6hW9s00hZZRLczoTjRs0rVrGdndSPtYWWsuSs1MG0/Ddf2Z6w3yP4212SLmXGxdS/ddzSFn6x5urooXnOu7uy5AyVOnz34erxWh1d1ln5DZWvrz5+5y9+Slkl23HL8YtVjGxH317p55zuytJjv+f0TZwdCPe75iWMfrF6g7X5Yye7s/Q8aX6BrnARXFjTnn2+oFi9yTp+TilLT/7Vs2fNL13eO3/2ffN7klJ2XZnwnFIGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP+5fwGr/DKvdyFm8QAAAABJRU5ErkJggg=="
+}
+<!-- Response when Request Not Filled -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "nama_barang": "Nama Barang tidak boleh kosong",
+        "jenis_id": "Jenis Barang tidak boleh kosong",
+        "ukuran_id": "Ukuran Barang tidak boleh kosong",
+        "harga_dasar": "Harga Dasar tidak boleh kosong",
+        "harga_jual": "Harga Jual tidak boleh kosong"
+    }
+}
+<!-- Response When Not Image Or Less Than 2MB -->
+{
+    "status": 0,
+    "message": "Foto harus kurang dari 2MB",
+    "message": "tipe foto yang diperbolehkan adalah {list rule foto}"
+    "data": []
+}
+<!-- Response When Success Upload Image -->
+{
+    "status": 1,
+    "message": "barang berhasil ditambahkan",
+    "data": []
+}
+
+<!-- Update Barang -->
+PUT /distributor/barang/{id}
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Normal Request -->
+{
+    "nama_barang":"sepeda bmx 2020",
+    "jenis_barang_id":1,
+    "ukuran_barang_id":1,
+    "harga_dasar":100000,
+    "harga_jual":150000,
+    "keterangan":"ready om",
+    "foto":"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"
+}
+<!-- Response when Request Not Filled -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "nama_barang": "Nama Barang tidak boleh kosong",
+        "jenis_id": "Jenis Barang tidak boleh kosong",
+        "ukuran_id": "Ukuran Barang tidak boleh kosong",
+        "harga_dasar": "Harga Dasar tidak boleh kosong",
+        "harga_jual": "Harga Jual tidak boleh kosong"
+    }
+}
+<!-- Response When Not Image Or Less Than 2MB -->
+{
+    "status": 0,
+    "message": "Foto harus kurang dari 0.01MB",
+    "message": "tipe foto yang diperbolehkan adalah {list rule foto}"
+    "data": []
+}
+<!-- Response When Success Upload Image -->
+{
+    "status": 1,
+    "message": "barang berhasil diubah",
+    "data": []
+}
+
+<!-- Delete Barang -->
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response When barang not found -->
+{
+    "status": 0,
+    "message": "barang tidak ditemukan",
+    "data": []
+}
+<!-- Response When Success -->
+{
+    "status": 1,
+    "message": "barang berhasil dihapus",
+    "data": []
+}
+<!-- Update Stok -->
+GET /distributor/barang/{id}/updatestok
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response When Barang not found -->
+{
+    "status": 0,
+    "message": "barang tidak ditemukan",
+    "data": []
+}
+<!-- Normal Request -->
+{
+    "stok":30,
+    "keterangan":"hapus barang",
+}
+<!-- Response When request not filed -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "stok": "Stok tidak boleh kosong"
+    }
+}
+<!-- Response When Success -->
+{
+    "status": 1,
+    "message": "stok barang berhasil diubah",
+    "data": []
+}
+<!-- Get Stok -->
+GET /distributor/barang/{id}/riwayatstok
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response When Barang not found -->
+{
+    "status": 0,
+    "message": "barang tidak ditemukan",
+    "data": []
+}
+<!-- Response When Success -->
+{
+    "status": 1,
+    "message": "riwayat stok barang berhasil didapatkan",
+    "data": [
+        {
+            "id": "5",
+            "barang_id": "1",
+            "stok_sekarang": "0",
+            "stok_perubahan": "180",
+            "keterangan": "init barang",
+            "created_at": "2020-11-02 09:29:29"
+        },
+        {
+            "id": "6",
+            "barang_id": "1",
+            "stok_sekarang": "180",
+            "stok_perubahan": "-1",
+            "keterangan": "Barang Terjual",
+            "created_at": "2020-11-02 09:29:48"
+        }
+    ]
+}
+
+<!-- Toko -->
+<!-- Get Toko -->
+GET /distributor/toko
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response When Success -->
+{
+    "status": 1,
+    "message": "berhasil mengambil data toko",
+    "data": [
+        {
+            "id": "1",
+            "user_id": "2",
+            "nama_toko": "toko sukajadi",
+            "email": "toko@gmail.com",
+            "alamat": "desa sukajadi 02 03",
+            "no_telp": "089819898213",
+            "aktif": "1",
+            "created_at": "2020-11-02 09:18:52",
+            "updated_at": "2020-11-02 09:18:52"
+        }
+    ]
+}
+<!-- Create Toko -->
+POST /distributor/toko
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Normal Request -->
+{
+    "username":"pemiliktoko1",
+    "nama":"pemiliktoko1",
+    "email":"pemiliktoko1@test.com",
+    "alamat":"gelang",
+    "no_telp":"089819831123",
+    "nama_toko":"toko sukajadi",
+    "email_toko":"toko@gmail.com",
+    "alamat_toko":"desa sukajadi 02 03",
+    "no_telp_toko":"089819898213"
+}
+<!-- Response When Request not filled -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "username": "Username Pemilik Toko tidak boleh kosong",
+        "email": "Email Pemilik Toko tidak boleh kosong",
+        "no_telp": "No Telepon Pemilik Toko tidak boleh kosong",
+        "nama": "Nama Pemilik Toko tidak boleh kosong",
+        "nama_toko": "Nama Toko tidak boleh kosong"
+    }
+}
+<!-- Response When Pemilik Toko is exist -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "user_id": "Pemilik Toko sudah memiliki toko"
+    }
+}
+<!-- Response When Success -->
+{
+    "status": 1,
+    "message": "toko berhasil ditambah",
+    "data": []
+}
+<!-- Delete Toko -->
+DELETE /distributor/toko/{id}
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response When Toko have karyawan -->
+{
+    "status": 0,
+    "message": "toko gagal dihapus, karena masih ada karyawan",
+    "data": []
+}
+<!-- Response When Success Delete -->
+{
+    "status": 1,
+    "message": "toko berhasil dihapus",
+    "data": []
+}
+
+<!-- Transaksi -->
+<!-- Get Transaksi -->
+GET /distributor/transaksi
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response When Success -->
+{
+    "status": 1,
+    "message": "berhasil mengambil transaksi",
+    "data": [
+        {
+            "id": "1",
+            "toko_id": "1",
+            "total_bayar": "300000",
+            "bayar": "50000",
+            "status": "0",
+            "created_at": "2020-11-03 09:40:54",
+            "nama_toko": "toko sukajadi",
+            "penjualan": [
+                {
+                    "id": "1",
+                    "transaksi_penjualan_distributor_id": "1",
+                    "barang_distributor_id": "1",
+                    "jumlah_barang": "2",
+                    "harga_jual": "150000",
+                    "nama_barang": "sepeda bmx 2020",
+                    "foto": "kosong.png"
+                }
+            ],
+            "pelunasan": [
+                {
+                    "id": "1",
+                    "transaksi_penjualan_id": "1",
+                    "bayar_sebelumnya": "0",
+                    "bayar": "50000",
+                    "keterangan": "Transaksi Awal",
+                    "created_at": "2020-11-03 09:40:54"
+                }
+            ]
+        }
+    ]
+}
+
+<!-- Create Transaksi -->
+POST /distributor/transaksi
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Normal Request -->
+{
+    "toko_id":1,
+    "bayar": 50000,
+    "barang":[
+        {
+            "id":1,
+            "jumlah_barang":2,
+            "harga_jual":150000
+        }
+    ],
+    "keterangan":"transaksi awal"
+}
+<!-- Response When Success -->
+{
+    "status": 1,
+    "message": "transaksi berhasil",
+    "data": []
+}
+
+<!-- Pelunasan -->
+POST /distributor/transaksi/{id}/pelunasan
+<!-- Response When Without Token Or Not Distributor -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Normal Request -->
+{
+    "bayar": 50000,
+    "keterangan":"pelunasan pertama"
+}
+<!-- Response When Success -->

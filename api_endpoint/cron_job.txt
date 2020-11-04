@@ -1,0 +1,4 @@
+<!-- Job -->
+GET /job/send_mail
+<!-- Response -->
+<!-- Redirect to home -->

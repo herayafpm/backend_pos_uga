@@ -12,8 +12,8 @@ class AuthApiFilter implements FilterInterface
         $response = service('response');
         if(!$request->hasHeader('Authorization')){
             $response->setStatusCode(401);
-            $response->setBody(json_encode(["status" => false,"message"=> "Unauthorized"]));
-            $response->setHeader('Content-type', 'text/html');
+            $response->setBody(json_encode(["status" => 0,"message"=> "Unauthorized","data" => []]));
+            $response->setHeader('Content-type', 'application/json');
             return $response;
         }
         try {
@@ -21,15 +21,15 @@ class AuthApiFilter implements FilterInterface
             $jwt = explode("Bearer ",$request->getHeader('Authorization')->getValue())[1];
             $decoded = JWT::decode($jwt, $config->appJWTKey, array('HS256'));
             $userModel = new \App\Models\UserModel();
-            $user = $userModel->getUser($decoded->nik);
-            if((bool) $user['status'] == false){
-                throw new \Exception("Akun anda belum aktif, akan diproses 1 * 24jam");
+            $user = $userModel->getUserWithRole($decoded->username);
+            if((bool) $user->aktif == false){
+                throw new \Exception("Akun anda belum aktif, silahkan kontak atasan");
             }
             $request->user = $user;
         } catch (\Exception $th) {
             $response->setStatusCode(401);
-            $response->setBody(json_encode(["status" => false,"message"=> $th->getMessage()]));
-            $response->setHeader('Content-type', 'text/html');
+            $response->setBody(json_encode(["status" => 0,"message"=> $th->getMessage(),"data" => []]));
+            $response->setHeader('Content-type', 'application/json');
             return $response;
         }
     }

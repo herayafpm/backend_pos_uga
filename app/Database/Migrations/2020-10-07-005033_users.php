@@ -6,6 +6,8 @@ class Users extends Migration
 {
 	public function up()
 	{
+		
+			$this->db->enableForeignKeyChecks();
 			$this->forge->addField([
 					'id'          => [
 							'type'           => 'INT',
@@ -13,7 +15,7 @@ class Users extends Migration
 							'unsigned'       => true,
 							'auto_increment' => true,
 					],
-					'nik'       => [
+					'username'       => [
 							'type'           => 'VARCHAR',
 							'constraint'     => '255',
 							'unique' 		 => true,
@@ -22,50 +24,27 @@ class Users extends Migration
 							'type'           => 'VARCHAR',
 							'constraint'     => '255',
 					],
-					'tempat'       => [
+					'email'       => [
 							'type'           => 'VARCHAR',
 							'constraint'     => '255',
+							'unique' 		 => true,
 					],
-					'tanggal'       => [
-							'type'           => 'VARCHAR',
-							'constraint'     => '255',
-					],
-					'jenis'       => [
-						'type'           => 'INT',
-						'constraint'     => 11,
+					'alamat'       => [
+							'type'           => 'TEXT',
 					],
 					'no_telp'       => [
 							'type'           => 'VARCHAR',
 							'constraint'     => '255',
 					],
-					'desa'       => [
-							'type'           => 'VARCHAR',
-							'constraint'     => '255',
-					],
-					'rt'       => [
-							'type'           => 'VARCHAR',
-							'constraint'     => '10',
-					],
-					'rw'       => [
-							'type'           => 'VARCHAR',
-							'constraint'     => '10',
-					],
-					'kecamatan'       => [
-							'type'           => 'VARCHAR',
-							'constraint'     => '255',
-					],
-					'kabupaten'       => [
-							'type'           => 'VARCHAR',
-							'constraint'     => '255',
-					],
-					'provinsi'       => [
-							'type'           => 'VARCHAR',
-							'constraint'     => '255',
-					],
-					'status'       => [
+					'aktif'       => [
 							'type'           => 'INT',
 							'constraint'     => 1,
 							'default' => 0
+					],
+					'role_id' => [
+						'type' => 'INT',
+						'constraint'     => 11,
+						'unsigned'          => TRUE,
 					],
 					'password'       => [
 							'type'           => 'VARCHAR',
@@ -73,12 +52,15 @@ class Users extends Migration
 					],
 					'created_at'       => [
 							'type'           => 'DATETIME',
+							'default' => date('Y-m-d H:i:s')
 					],
 					'updated_at'       => [
 							'type'           => 'DATETIME',
+							'default' => date('Y-m-d H:i:s')
 					],
 			]);
 			$this->forge->addKey('id', true);
+			$this->forge->addForeignKey('role_id','roles','id');
 			$this->forge->createTable('users');
 	}
 

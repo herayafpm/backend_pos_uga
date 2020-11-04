@@ -12,8 +12,8 @@ class AuthController extends ResourceController
     {
         $validation =  \Config\Services::validation();
         $loginRule = [
-            'nik' => [
-                'label'  => 'NIK',
+            'username' => [
+                'label'  => 'Username',
                 'rules'  => 'required',
                 'errors' => [
                     'required' => '{field} tidak boleh kosong',
@@ -30,169 +30,97 @@ class AuthController extends ResourceController
         ];
         $dataJson = $this->request->getJson();
         $data = [
-            'nik' => htmlspecialchars($dataJson->nik ?? ''),
+            'username' => htmlspecialchars($dataJson->username ?? ''),
             'password' => htmlspecialchars($dataJson->password ?? ''),
         ];
         $validation->setRules($loginRule);
         if(!$validation->run($data)){
-            return $this->respond($validation->getErrors(), 400);
+            return $this->respond(["status" => 0,"message"=>"validasi error","data"=>$validation->getErrors()], 400);
         }
-        $user = $this->model->authenticate($data['nik'],$data['password']);
+        $user = $this->model->authenticate($data['username'],$data['password']);
         if($user){
-            if((bool) $user['status']){
+            if((bool) $user->aktif){
                 $config = config('App');
                 $jwt = JWT::encode($user,$config->appJWTKey);
-                return $this->respond(["status" => true,"data"=>$user,"token"=> $jwt], 200);  
+                $user->token = $jwt;
+                return $this->respond(["status" => 1,"message"=>"login berhasil","data"=>$user], 200);  
             }else{
-                return $this->respond(["status" => false,"message"=>"Akun anda belum aktif, akan diproses 1 * 24jam"], 500); 
+                return $this->respond(["status" => 0,"message"=>"akun anda belum aktif, akan diproses 1 * 24jam","data" => []], 500); 
             }
         }else{
-            return $this->respond(["status" => false,"message"=>"nik dan / atau password salah"], 400); 
+            return $this->respond(["status" => 0,"message"=>"username dan / atau password salah","data" => []], 400); 
         }
     }
     public function profile()
     {
-        return $this->respond(['status' => true,'data' => $this->request->user], 200);  
+        return $this->respond(['status' => 1,"message"=>"berhasil mengambil profile",'data' => $this->request->user], 200);  
     }
-
-    public function register()
+    public function update_profile()
     {
         $validation =  \Config\Services::validation();
-        $registerRule = [
-            'nik' => [
-                'label'  => 'NIK',
-                'rules'  => 'required|is_unique[users.nik]',
+        $id = $this->request->user->id;
+        $updateProfileRule = [
+            'username' => [
+                'label'  => 'Username',
+                'rules'  => 'required|cek_username['.$id.']',
                 'errors' => [
                     'required' => '{field} tidak boleh kosong',
-                    'is_unique' => '{field} sudah digunakan akun lain',
+                    'cek_username' => '{field} sudah digunakan',
                 ]
             ],
             'nama' => [
-                'label'  => 'Nama',
+                'label'  => 'nama',
                 'rules'  => 'required',
                 'errors' => [
                     'required' => '{field} tidak boleh kosong'
                 ]
             ],
-            'tempat' => [
-                'label'  => 'Tempat Lahir',
-                'rules'  => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong'
-                ]
-            ],
-            'tanggal' => [
-                'label'  => 'Tanggal Lahir',
-                'rules'  => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong'
-                ]
-            ],
-            'jenis' => [
-                'label'  => 'Jenis Kelamin',
-                'rules'  => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong'
-                ]
-            ],
-            'no_telp' => [
-                'label'  => 'No Telepon (WA)',
-                'rules'  => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong'
-                ]
-            ],
-            'no_telp' => [
-                'label'  => 'No Telp',
-                'rules'  => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong'
-                ]
-            ],
-            'desa' => [
-                'label'  => 'Desa',
-                'rules'  => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong'
-                ]
-            ],
-            'rt' => [
-                'label'  => 'RT',
-                'rules'  => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong'
-                ]
-            ],
-            'rw' => [
-                'label'  => 'RW',
-                'rules'  => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong'
-                ]
-            ],
-            'kecamatan' => [
-                'label'  => 'Kecamatan',
-                'rules'  => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong'
-                ]
-            ],
-            'kabupaten' => [
-                'label'  => 'Kabupaten',
-                'rules'  => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong'
-                ]
-            ],
-            'provinsi' => [
-                'label'  => 'Provinsi',
-                'rules'  => 'required',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong'
-                ]
-            ],
-            'password' => [
-                'label'  => 'Password',
-                'rules'  => 'required|min_length[6]',
+            'email' => [
+                'label'  => 'Email',
+                'rules'  => 'required|cek_email['.$id.']',
                 'errors' => [
                     'required' => '{field} tidak boleh kosong',
-                    'min_length' => '{field} harus lebih dari 6 karakter'
+                    'cek_email' => '{field} sudah digunakan',
+                ]
+            ],
+            'alamat' => [
+                'label'  => 'Alamat',
+                'rules'  => 'required',
+                'errors' => [
+                    'required' => '{field} tidak boleh kosong'
+                ]
+            ],
+            'no_telp' => [
+                'label'  => 'No Telephone',
+                'rules'  => 'required',
+                'errors' => [
+                    'required' => '{field} tidak boleh kosong'
                 ]
             ],
         ];
         $dataJson = $this->request->getJson();
         $data = [
-            'nik' => htmlspecialchars($dataJson->nik ?? ''),
-            'nama' => htmlspecialchars($dataJson->nama ?? ''),
-            'tempat' => htmlspecialchars($dataJson->tempat ?? ''),
-            'tanggal' => htmlspecialchars($dataJson->tanggal ?? ''),
-            'jenis' => htmlspecialchars($dataJson->jenis ?? ''),
-            'no_telp' => htmlspecialchars($dataJson->no_telp ?? ''),
-            'desa' => htmlspecialchars($dataJson->desa ?? ''),
-            'rt' => htmlspecialchars($dataJson->rt ?? ''),
-            'rw' => htmlspecialchars($dataJson->rw ?? ''),
-            'kecamatan' => htmlspecialchars($dataJson->kecamatan ?? ''),
-            'kabupaten' => htmlspecialchars($dataJson->kabupaten ?? ''),
-            'provinsi' => htmlspecialchars($dataJson->provinsi ?? ''),
-            'password' => htmlspecialchars($dataJson->password ?? ''),
+            'username' => htmlspecialchars(trim(strtolower($dataJson->username ?? ''))),
+            'nama' => htmlspecialchars(trim(strtolower($dataJson->nama ?? ''))),
+            'email' => htmlspecialchars(trim($dataJson->email ?? '')),
+            'alamat' => htmlspecialchars(trim($dataJson->alamat ?? '')),
+            'no_telp' => htmlspecialchars(trim($dataJson->no_telp ?? '')),
         ];
-        $validation->setRules($registerRule);
+        $validation->setRules($updateProfileRule);
         if(!$validation->run($data)){
-            return $this->respond($validation->getErrors(), 400);
+            return $this->respond(["status" => 0,"message"=>"validasi error","data"=>$validation->getErrors()], 400);
         }
-        $data['status'] = 1;
-        $save = $this->model->insertUser($data);
-        if($save){
-            return $this->respond(["status" => true,"message"=>"Berhasil mendaftar, silahkan login"], 200);  
+        $update = $this->model->update($id,$data);
+        if($update){
+            return $this->respond(["status" => 1,"message"=> "Berhasil mengupdate profile","data" => []], 200);
         }else{
-            return $this->respond(["status" => false,"message"=>"Gagal mendaftar"], 400); 
-        } 
-       
+            return $this->respond(["status" => 0,"message"=>"Gagal mengupdate profile","data" => []], 400); 
+        }
     }
     public function change_pass()
     {
         $validation =  \Config\Services::validation();
-        $id = $this->request->user['id'];
+        $id = $this->request->user->id;
         $changePassRule = [
             'old_password' => [
                 'label'  => 'Password Lama',
@@ -218,13 +146,13 @@ class AuthController extends ResourceController
         ];
         $validation->setRules($changePassRule);
         if(!$validation->run($data)){
-            return $this->respond($validation->getErrors(), 400);
+            return $this->respond(["status" => 0,"message"=>"validasi error","data"=>$validation->getErrors()], 400);
         }
-        $res = $this->model->change_pass($id,$data['new_password']);
+        $res = $this->model->update($id,['password' => $data['new_password']]);
         if($res){
-            return $this->respond(["status" => true,"message"=> "Berhasil mengubah password"], 200);
+            return $this->respond(["status" => 1,"message"=> "Berhasil mengubah password","data" => []], 200);
         }else{
-            return $this->respond(["status" => false,"message"=>"Gagal mengubah password"], 400); 
+            return $this->respond(["status" => 0,"message"=>"Gagal mengubah password","data" => []], 400); 
         }
     }
     public function forgot_pass()
@@ -232,16 +160,16 @@ class AuthController extends ResourceController
         $validation =  \Config\Services::validation();
         $dataJson = $this->request->getJson();
         $data = [
-            'nik' => htmlspecialchars($dataJson->nik ?? ''),
+            'username' => htmlspecialchars($dataJson->username ?? ''),
             'password' => htmlspecialchars($dataJson->password ?? ''),
         ];
         $forgotPassRule = [
-            'nik' => [
-                'label'  => 'NIK',
-                'rules'  => 'required|cek_nik',
+            'username' => [
+                'label'  => 'Username',
+                'rules'  => 'required|cek_username',
                 'errors' => [
                     'required' => '{field} tidak boleh kosong',
-                    'cek_nik' => '{field} tidak ditemukkan',
+                    'cek_username' => '{field} tidak ditemukkan',
                 ]
             ],
             'password' => [
@@ -256,44 +184,40 @@ class AuthController extends ResourceController
         
         $validation->setRules($forgotPassRule);
         if(!$validation->run($data)){
-            return $this->respond($validation->getErrors(), 400);
+            return $this->respond(["status" => 0,"message"=>"validasi error","data"=>$validation->getErrors()], 400);
         }
-        $user = $this->model->getUser($data['nik']);
-        $res = $this->model->change_pass($user['id'],$data['password']);
-        if($res){
-            return $this->respond(["status" => true,"message"=> "Berhasil mengubah password"], 200);
+        $user = $this->model->getUser($data['username']);
+        $UserForgotModel = new \App\Models\UserForgotModel();
+        $cekTabel = $UserForgotModel->where(['username' => $user->username])->get()->getRow();
+        if($cekTabel){
+           $UserForgotModel->where(['username' => $user->username])->delete();
+        }
+        $insert = $UserForgotModel->save(['token' => uniqid(time()."_".rand(0,200)."_"),'username' => $user->username,'email' => $user->email,'password' => $data['password']]);
+        if($insert){
+            return $this->respond(["status" => 1,"message"=> "silahkan cek email ".$user->email." untuk verifikasi, batas waktunya 60 menit","data" => []], 200);
         }else{
-            return $this->respond(["status" => false,"message"=>"Gagal mengubah password"], 400); 
+            return $this->respond(["status" => 0,"message"=>"gagal mengirim email, coba sekali lagi","data" => []], 400); 
         }
     }
-
-    public function cek_status()
+    public function verif_forgot_pass($token)
     {
-        $validation =  \Config\Services::validation();
-        $dataJson = $this->request->getJson();
-        $data = [
-            'nik' => htmlspecialchars($dataJson->nik ?? ''),
-        ];
-        $cekStatusRule = [
-            'nik' => [
-                'label'  => 'NIK',
-                'rules'  => 'required|cek_nik',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong',
-                    'cek_nik' => '{field} tidak ditemukkan',
-                ]
-            ],
-        ];
-        $validation->setRules($cekStatusRule);
-        if(!$validation->run($data)){
-            return $this->respond($validation->getErrors(), 400);
-        }
-        $user = $this->model->getUser($data['nik']);
-        if((bool) $user['status']){
-            return $this->respond(["status" => true,"message"=> "Sudah diaktivasi"], 200);
+        $token = urldecode($token);
+        $UserForgotModel = new \App\Models\UserForgotModel();
+        $cek = $UserForgotModel->where('token',$token)->get()->getRow();
+        if($cek){
+            $now = date_create(date('Y-m-d H:i:s'));
+            $tokenTime = date_create($cek->created_at);
+            $diff=date_diff($now,$tokenTime);
+            if($diff->i < 60){
+                $this->model->where('username',$cek->username)->set(['password' => $cek->password])->update();
+                $UserForgotModel->where('token',$token)->delete();
+                echo "verifikasi lupa kata sandi berhasil";
+            }else{
+                $UserForgotModel->where('token',$token)->delete();
+                echo "Token Kadaluwarsa";
+            }
         }else{
-            $this->model->update($user['id'],['status' => 1]);
-            return $this->respond(["status" => false,"message"=>"Belum diaktivasi, silahkan tunggu akan kami aktivasi dalam 1 detik"], 400); 
+            echo "Token tidak ditemukan";
         }
     }
     

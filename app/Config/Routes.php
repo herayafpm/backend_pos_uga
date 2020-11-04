@@ -31,23 +31,66 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/static', 'DashboardController::static');
-$routes->group('difabel', function($routes)
-{
-	$routes->get('', 'DashboardController::index',['filter' => 'authapi']);
-    $routes->delete('delete/(:segment)', 'DashboardController::delete/$1',['filter' => 'authapi']);
-	$routes->get('show/(:segment)', 'DashboardController::show/$1',['filter' => 'authapi']);
-    $routes->post('register', 'DashboardController::register',['filter' => 'authapi']);
-    $routes->post('cekstatus', 'DashboardController::cek_status');
-});
 $routes->group('auth', function($routes)
 {
 	$routes->post('', 'AuthController::login');
-    $routes->post('register', 'AuthController::register');
-	$routes->post('cekstatus', 'AuthController::cek_status');
 	$routes->post('forgotpass', 'AuthController::forgot_pass');
+	$routes->get('forgotpass/(:segment)', 'AuthController::verif_forgot_pass/$1');
 	$routes->get('profile','AuthController::profile',['filter' => 'authapi']);
+	$routes->put('profile','AuthController::update_profile',['filter' => 'authapi']);
 	$routes->put('changepass','AuthController::change_pass',['filter' => 'authapi']);
+});
+
+$routes->group('distributor', function($routes)
+{
+	$routes->get('','DistributorController::index',['filter' => 'distributor']);
+	$routes->put('','DistributorController::updateDistributor',['filter' => 'distributor']);
+	$routes->group('barang', function($routes)
+	{
+		$routes->get('','BarangDistributorController::index',['filter' => 'distributor']);
+		$routes->post('','BarangDistributorController::create',['filter' => 'distributor']);
+		$routes->get('(:segment)/riwayatstok','BarangDistributorController::riwayatstok/$1',['filter' => 'distributor']);
+		$routes->post('(:segment)/updatestok','BarangDistributorController::updatestok/$1',['filter' => 'distributor']);
+		$routes->put('(:segment)','BarangDistributorController::update/$1',['filter' => 'distributor']);
+		$routes->delete('(:segment)','BarangDistributorController::delete/$1',['filter' => 'distributor']);
+	});
+
+	$routes->group('toko', function($routes)
+	{
+		$routes->get('','TokoDistributorController::index',['filter' => 'distributor']);
+		$routes->post('','TokoDistributorController::create',['filter' => 'distributor']);
+		$routes->delete('(:segment)','TokoDistributorController::delete/$1',['filter' => 'distributor']);
+	});
+	$routes->group('transaksi', function($routes)
+	{
+		$routes->get('','TransaksiPenjualanDistributorController::index',['filter' => 'distributor']);
+		$routes->post('','TransaksiPenjualanDistributorController::create',['filter' => 'distributor']);
+		$routes->post('(:segment)/pelunasan','TransaksiPenjualanDistributorController::pelunasan/$1',['filter' => 'distributor']);
+	});
+	
+});
+
+$routes->group('toko', function($routes)
+{
+	$routes->get('','TokoController::index',['filter' => 'pemiliktokoandkaryawan']);
+	$routes->put('','TokoController::updatetoko',['filter' => 'pemiliktoko']);
+	$routes->group('karyawan', function($routes)
+	{
+		$routes->get('','KaryawanController::index',['filter' => 'pemiliktoko']);
+		$routes->post('','KaryawanController::create',['filter' => 'pemiliktoko']);
+		$routes->delete('(:segment)','KaryawanController::delete/$1',['filter' => 'pemiliktoko']);
+	});
+	$routes->group('barang', function($routes)
+	{
+		$routes->get('','BarangTokoController::index',['filter' => 'pemiliktokoandkaryawan']);
+		$routes->put('(:segment)','BarangTokoController::update/$1',['filter' => 'pemiliktoko']);
+		$routes->delete('(:segment)','BarangTokoController::delete/$1',['filter' => 'pemiliktoko']);
+	});
+});
+
+$routes->group('job', function($routes)
+{
+	$routes->get('send_mail', 'CronJobController::sendMail');
 });
 
 

@@ -1,0 +1,203 @@
+<!-- Login -->
+POST /auth
+<!-- Normal Request -->
+{
+  "username":"distributor1",
+  "password":"123456"
+}
+<!-- Error Validasi username and password not exist -->
+{
+  "status": 0,
+  "message": "validasi error",
+  "data": {
+    "username": "Username tidak boleh kosong",
+    "password": "Password tidak boleh kosong"
+  }
+}
+<!-- Error Username atau Password -->
+{
+  "status": 0,
+  "message": "username dan / atau password salah",
+  "data": []
+}
+
+<!-- Berhasil Login -->
+{
+    "status": 1,
+    "message": "login berhasil",
+    "data": {
+        "id": "1",
+        "username": "distributor1",
+        "nama": "distributor1",
+        "email": "distributor1@test.com",
+        "alamat": "desa gelang",
+        "no_telp": "0895378036526",
+        "aktif": "1",
+        "role_id": "1",
+        "password": "$2y$10$coBt0Or8Mpzf76pTm5kRoun.wI9PVd7s5yzdWlzV2svxzkw6BlZ9y",
+        "created_at": "2020-11-02 08:53:24",
+        "updated_at": "2020-11-02 08:53:24",
+        "role_nama": "distributor",
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEiLCJ1c2VybmFtZSI6ImRpc3RyaWJ1dG9yMSIsIm5hbWEiOiJkaXN0cmlidXRvcjEiLCJlbWFpbCI6ImRpc3RyaWJ1dG9yMUB0ZXN0LmNvbSIsImFsYW1hdCI6ImRlc2EgZ2VsYW5nIiwibm9fdGVscCI6IjA4OTUzNzgwMzY1MjYiLCJha3RpZiI6IjEiLCJyb2xlX2lkIjoiMSIsInBhc3N3b3JkIjoiJDJ5JDEwJGNvQnQwT3I4TXB6Zjc2cFRtNWtSb3VuLndJOVBWZDdzNXl6ZFdselYyc3Z4emt3NkJsWjl5IiwiY3JlYXRlZF9hdCI6IjIwMjAtMTEtMDIgMDg6NTM6MjQiLCJ1cGRhdGVkX2F0IjoiMjAyMC0xMS0wMiAwODo1MzoyNCIsInJvbGVfbmFtYSI6ImRpc3RyaWJ1dG9yIn0.jXOdkcydz5NQhJFeVeyaSme38IP3js6ZUDCHznpcxq4"
+    }
+}
+
+<!-- Profile -->
+GET /auth/profile
+<!-- Without Token Response Or Invalid Token -->
+{
+  "status": 0,
+  "message": "Unauthorized",
+  "data": []
+}
+<!-- With Token Response -->
+{
+    "status": 1,
+    "message": "berhasil mengambil profile",
+    "data": {
+        "id": "1",
+        "username": "distributor1",
+        "nama": "distributor1",
+        "email": "distributor1@test.com",
+        "alamat": "desa gelang",
+        "no_telp": "0895378036526",
+        "aktif": "1",
+        "role_id": "1",
+        "password": "$2y$10$coBt0Or8Mpzf76pTm5kRoun.wI9PVd7s5yzdWlzV2svxzkw6BlZ9y",
+        "created_at": "2020-11-02 08:53:24",
+        "updated_at": "2020-11-02 08:53:24",
+        "role_nama": "distributor"
+    }
+}
+
+<!-- Profile Change -->
+PUT /auth/profile
+<!-- Without Token Response -->
+{
+  "status": 0,
+  "message": "Unauthorized",
+  "data": []
+}
+<!-- With Token Response -->
+<!-- Normal Request -->
+{
+  "username": "distributor1",
+  "nama":"distributor1",
+  "email":"distributor1@test.com",
+  "alamat":"gelang",
+  "no_telp":"08981732139"
+}
+<!-- Response Request Field Not Exist -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "username": "Username tidak boleh kosong",
+        "nama": "nama tidak boleh kosong",
+        "email": "Email tidak boleh kosong",
+        "alamat": "Alamat tidak boleh kosong",
+        "no_telp": "No Telephone tidak boleh kosong"
+    }
+}
+<!-- Response When Request field all exist but email is used other account -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "email": "Email sudah digunakan"
+    }
+}
+<!-- Response When Request field all exist but username is used other account -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "username": "Username sudah digunakan"
+    }
+}
+
+<!-- Response When Request filled and success -->
+{
+    "status": 1,
+    "message": "Berhasil mengupdate profile",
+    "data": []
+}
+
+PUT /auth/changepass
+<!-- Without Token Response -->
+{
+  "status": 0,
+  "message": "Unauthorized",
+  "data": []
+}
+<!-- Normal Request -->
+{
+  "old_password":"123456",
+  "new_password":"123456"
+}
+<!-- With Token Response Not Normal Request -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "old_password": "Password Lama tidak boleh kosong",
+        "new_password": "Password Baru tidak boleh kosong"
+    }
+}
+<!-- With Token Response Normal Request But Old Password Wrong -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "old_password": "Password Lama salah"
+    }
+}
+<!-- With Token Response Normal Request And Old Password Correct -->
+{
+    "status": 1,
+    "message": "Berhasil mengubah password",
+    "data": []
+}
+
+
+<!-- Forgot Password -->
+POST /auth/forgotpass
+<!-- Normal Request -->
+{
+  "username":"distributor1",
+  "password":"123456"
+}
+<!-- Response when request not filled -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "username": "Username tidak boleh kosong",
+        "password": "Password tidak boleh kosong"
+    }
+}
+<!-- Response when username not found -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "username": "Username tidak ditemukkan"
+    }
+}
+<!-- Response When Request Success -->
+{
+    "status": 1,
+    "message": "silahkan cek email distributor1@test.com untuk verifikasi, batas waktunya 60 menit",
+    "data": []
+}
+
+<!-- Forgot Password Validasi -->
+GET /auth/forgotpass/{token}
+<!-- Response Without token -->
+<!-- Token Example 1604280731_54_5f9f619bd0753 -->
+<!-- Response When limit time not exceeded -->
+verifikasi lupa kata sandi berhasil
+<!-- Response When Token not find -->
+Token tidak ditemukan
+<!-- Response When Token is Expired -->
+Token Expired

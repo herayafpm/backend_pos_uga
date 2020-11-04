@@ -1,0 +1,18 @@
+config:
+  target: "https://posuga.herayadev.my.id"
+  phases:
+    - duration: 3
+      arrivalRate: 10
+  https:
+    pool: 1
+    timeout: 3
+  
+scenarios:
+  - flow:
+      - post:
+          url: "/auth"
+          headers:
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJkaXN0cmlidXRvcjEiLCJuYW1hIjoiZGlzdHJpYnV0b3IgMSIsImlhdCI6MTYwMjkzMzM2M30.nNO0Wq-4UbGeI1DsGvFY3ccuoE52PTvQa-rOdCUMMD0
+          json:
+            username: "superadmin"
+            password: "123456"

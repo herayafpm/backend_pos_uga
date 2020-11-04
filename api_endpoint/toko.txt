@@ -1,0 +1,186 @@
+<!-- Get Toko -->
+GET /toko
+<!-- Response Without Token or not pemilik toko or not karyawan -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response success -->
+{
+    "status": 1,
+    "message": "berhasil mengambil data toko",
+    "data": {
+        "id": "1",
+        "user_id": "2",
+        "nama_toko": "toko sukajadi",
+        "email": "toko@gmail.com",
+        "alamat": "desa sukajadi 02 03",
+        "no_telp": "089819898213",
+        "aktif": "1",
+        "created_at": "2020-11-02 10:47:37",
+        "updated_at": "2020-11-02 10:47:37"
+    }
+}
+
+<!-- Update Toko -->
+PUT /toko
+<!-- Response Without Token or not pemilik toko -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Normal Request -->
+{
+    "nama_toko":"toko sukajadi",
+    "email":"toko@gmail.com",
+    "alamat":"desa sukajadi 02 03",
+    "no_telp":"089819898213"
+}
+<!-- Response Success -->
+{
+    "status": 1,
+    "message": "toko berhasil diubah",
+    "data": []
+}
+
+<!-- Create Karyawan -->
+POST /toko/karyawan
+<!-- Response Without Token or not pemilik toko -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Normal Request -->
+{
+    "username":"karyawan1",
+    "nama":"karyawan1",
+    "email":"karyawan1@test.com",
+    "alamat":"gelang",
+    "no_telp":"089819831123"
+}
+<!-- Response When data not filled -->
+{
+  "status": 0,
+  "message": "validasi error",
+  "data": {
+      "username": "Username Karyawan tidak boleh kosong",
+      "email": "Email Karyawan tidak boleh kosong",
+      "no_telp": "No Telepon Karyawan tidak boleh kosong",
+      "nama": "Nama Karyawan tidak boleh kosong"
+}
+<!-- Response When username or email is exist -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "username": "Username Karyawan sudah digunakan",
+        "email": "Email Karyawan sudah digunakan"
+    }
+}
+
+<!-- Response Success -->
+{
+    "status": 1,
+    "message": "karyawan berhasil ditambahkan",
+    "data": []
+}
+
+<!-- Delete Karyawan -->
+DELETE /toko/karyawan/{id}
+<!-- Response Without Token or not pemilik toko -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response When Karyawan not found -->
+{
+    "status": 0,
+    "message": "karyawan tidak ditemukkan",
+    "data": []
+}
+<!-- Response Success -->
+{
+    "status": 1,
+    "message": "karyawan berhasil dihapus",
+    "data": []
+}
+
+<!-- Barang -->
+<!-- Get Barang -->
+GET /toko/barang
+<!-- Response Without Token or not pemilik toko or karyawan -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response When Success -->
+{
+    "status": 1,
+    "message": "berhasil mengambil data barang",
+    "data": [
+        {
+            "id": "1",
+            "toko_id": "1",
+            "foto": "kosong.png",
+            "nama_barang": "sepeda bmx 2020",
+            "jenis_barang_id": "1",
+            "ukuran_barang_id": "1",
+            "stok": "2",
+            "harga_dasar": "100000",
+            "harga_jual": "150000",
+            "keterangan": "ready gan",
+            "created_at": "2020-11-03 10:02:05",
+            "updated_at": "2020-11-03 10:02:05",
+            "ukuran_barang_nama": "S",
+            "jenis_barang_nama": "sepeda lipat"
+        }
+    ]
+}
+
+<!-- Update Barang -->
+PUT /toko/barang/{id}
+<!-- Response Without Token or not pemilik toko -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Normal Request -->
+{
+    "harga_jual":200000,
+    "keterangan":"ready"
+}
+<!-- Response When Request Not FIlled -->
+{
+    "status": 0,
+    "message": "validasi error",
+    "data": {
+        "harga_jual": "Harga Jual tidak boleh kosong",
+        "keterangan": "Keterangan tidak boleh kosong"
+    }
+}
+<!-- Response When Success -->
+{
+    "status": 1,
+    "message": "barang berhasil diubah",
+    "data": []
+}
+
+DELETE /toko/barang/{id}
+<!-- Response Without Token or not pemilik toko -->
+{
+    "status": 0,
+    "message": "Unauthorized",
+    "data": []
+}
+<!-- Response When Success -->
+{
+    "status": 1,
+    "message": "barang berhasil di ubah stok menjadi 0",
+    "data": []
+}
