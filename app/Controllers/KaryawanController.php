@@ -10,8 +10,11 @@ class KaryawanController extends ResourceController
 
   public function index()
   {
+    $dataGet = $this->request->getGet();
+    $limit = $dataGet["limit"] ?? 10;
+    $offset = $dataGet["offset"] ?? 0;
     $toko = $this->request->toko;
-    $karyawans = $this->model->getKaryawans($toko['id']);
+    $karyawans = $this->model->getKaryawans($toko['id'],$limit,$offset);
     return $this->respond(["status" => 1,"message"=>"berhasil mengambil data karyawan","data" => $karyawans], 200);
   }
   public function create()
@@ -90,10 +93,13 @@ class KaryawanController extends ResourceController
   {
     $karyawan = $this->model->where('id',$id)->get()->getRow();
     if(!$karyawan){
+      
       return $this->respond(["status" => 0,"message"=>"karyawan tidak ditemukkan","data" =>[]], 400);
     }
     $delete = $this->model->delete($id);
     if($delete){
+      $userModel = new UserModel();
+      $userModel->delete($karyawan->user_id);
       return $this->respond(["status" => 1,"message"=>"karyawan berhasil dihapus","data" => []], 200); 
     }else{
       return $this->respond(["status" => 0,"message"=>"karyawan gagal dihapus","data" => []], 400); 

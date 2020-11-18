@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\UserModel;
+use App\Models\TransaksiPenjualanDistributorModel;
 
 class TokoDistributorController extends ResourceController
 {   
@@ -10,7 +11,10 @@ class TokoDistributorController extends ResourceController
 
   public function index()
   {
-    $tokos = $this->model->tokos();
+    $dataGet = $this->request->getGet();
+    $limit = $dataGet["limit"] ?? 10;
+    $offset = $dataGet["offset"] ?? 0;
+    $tokos = $this->model->tokos($limit,$offset);
     return $this->respond(["status" => 1,"message"=>"berhasil mengambil data toko","data" => $tokos], 200); 
   }
 
@@ -42,13 +46,6 @@ class TokoDistributorController extends ResourceController
               'required' => '{field} tidak boleh kosong',
           ]
       ],
-      'nama' => [
-          'label'  => 'Nama Pemilik Toko',
-          'rules'  => 'required',
-          'errors' => [
-              'required' => '{field} tidak boleh kosong',
-          ]
-      ],
       'nama_toko' => [
           'label'  => 'Nama Toko',
           'rules'  => 'required',
@@ -60,10 +57,9 @@ class TokoDistributorController extends ResourceController
     $data = [
         'username' => htmlspecialchars($dataJson->username ?? ''),
         'email' => htmlspecialchars($dataJson->email ?? ''),
-        'nama' => htmlspecialchars($dataJson->nama ?? ''),
+        'nama_toko' => htmlspecialchars($dataJson->nama_toko ?? ''),
         'no_telp' => htmlspecialchars($dataJson->no_telp ?? ''),
         'alamat' => htmlspecialchars($dataJson->alamat ?? ''),
-        'nama_toko' => htmlspecialchars($dataJson->nama_toko ?? ''),
     ];
     $validation->setRules($createTokoRule);
     if(!$validation->run($data)){
@@ -73,18 +69,12 @@ class TokoDistributorController extends ResourceController
     $data['password'] = "123456";
     $data['role_id'] = 2;
     $data['aktif'] = 1;
-    $dataToko = [
-      'nama_toko' => $data['nama_toko'],
-      'email' => htmlspecialchars($dataJson->email_toko ?? ''),
-      'no_telp' => htmlspecialchars($dataJson->no_telp_toko ?? ''),
-      'alamat' => htmlspecialchars($dataJson->alamat_toko ?? ''),
-    ];
-    unset($data['nama_toko']);
-    $user = $userModel->insertUser($data);
+    $data['nama'] = $data['nama_toko'];
+    $user = $userModel->save($data);
     if($user){
       $user_id = $userModel->getLastId();
-      $dataToko['user_id'] = $user_id;
-      $create = $this->model->save($dataToko);
+      $data['user_id'] = $user_id;
+      $create = $this->model->save($data);
       if($create){
         return $this->respond(["status" => 1,"message"=>"toko berhasil ditambahkan","data" => []], 200); 
       }else{
@@ -101,6 +91,12 @@ class TokoDistributorController extends ResourceController
   {
     $toko = $this->model->where('id',$id)->get()->getRow();
     if($toko){
+      $transaksiModel = new TransaksiPenjualanDistributorModel();
+      if($transaksiModel->where('toko_id',$toko->id)->get()->getRow()){
+        return $this->respond(["status" => 0,"message"=>"toko ".$toko->nama_toko." Tidak bisa dihapus masih digunakan","data" => []], 400); 
+      }
+      $userModel = new UserModel();
+      $userModel->delete($toko->user_id);
       $delete = $this->model->where('id',$id)->delete();
       if($delete){
         return $this->respond(["status" => 1,"message"=>"toko berhasil dihapus","data" => []], 200); 
