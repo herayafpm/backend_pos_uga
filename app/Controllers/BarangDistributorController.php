@@ -25,7 +25,7 @@ class BarangDistributorController extends ResourceController
     $jeniss = $jenisBarangModel->get()->getResultArray();
     $ukuranBarangModel = new \App\Models\UkuranBarangModel();
     $ukurans = $ukuranBarangModel->get()->getResultArray();
-    return $this->respond(["status" => 1, "message" => "berhasil mengambil data barang", "data" => compact('jeniss', 'ukurans')], 200);
+    return $this->respond(["status" => 1, "message" => "berhasil mengambil data jenis dan ukuran", "data" => compact('jeniss', 'ukurans')], 200);
   }
   public function show($id = NULL)
   {

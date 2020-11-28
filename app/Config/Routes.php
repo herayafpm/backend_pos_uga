@@ -45,26 +45,31 @@ $routes->group('distributor', function ($routes) {
 	$routes->get('', 'DistributorController::index', ['filter' => 'distributor']);
 	$routes->put('', 'DistributorController::updateDistributor', ['filter' => 'distributor']);
 	$routes->group('barang', function ($routes) {
-		$routes->get('', 'BarangDistributorController::index', ['filter' => 'distributor']);
+		// $routes->get('', 'BarangDistributorController::index', ['filter' => 'distributor']);
+		// $routes->get('(:segment)', 'BarangDistributorController::show/$1', ['filter' => 'distributor']);
+		// $routes->post('', 'BarangDistributorController::create', ['filter' => 'distributor']);
+		// $routes->put('(:segment)', 'BarangDistributorController::update/$1', ['filter' => 'distributor']);
+		// $routes->delete('(:segment)', 'BarangDistributorController::delete/$1', ['filter' => 'distributor']);
 		$routes->get('static', 'BarangDistributorController::static', ['filter' => 'distributor']);
-		$routes->get('(:segment)', 'BarangDistributorController::show/$1', ['filter' => 'distributor']);
-		$routes->post('', 'BarangDistributorController::create', ['filter' => 'distributor']);
 		$routes->get('(:segment)/riwayatstok', 'BarangDistributorController::riwayatstok/$1', ['filter' => 'distributor']);
 		$routes->post('(:segment)/updatestok', 'BarangDistributorController::updatestok/$1', ['filter' => 'distributor']);
-		$routes->put('(:segment)', 'BarangDistributorController::update/$1', ['filter' => 'distributor']);
-		$routes->delete('(:segment)', 'BarangDistributorController::delete/$1', ['filter' => 'distributor']);
 	});
+	$routes->resource('barang', ['filter' => 'distributor', 'controller' => 'BarangDistributorController']);
 
-	$routes->group('toko', function ($routes) {
-		$routes->get('', 'TokoDistributorController::index', ['filter' => 'distributor']);
-		$routes->post('', 'TokoDistributorController::create', ['filter' => 'distributor']);
-		$routes->delete('(:segment)', 'TokoDistributorController::delete/$1', ['filter' => 'distributor']);
-	});
+	$routes->resource('jenis', ['filter' => 'distributor', 'controller' => 'JenisBarangController']);
+	$routes->resource('ukuran', ['filter' => 'distributor', 'controller' => 'UkuranBarangController']);
+	$routes->resource('toko', ['filter' => 'distributor', 'only' => ['index', 'create', 'delete'], 'controller' => 'TokoDistributorController']);
+	// $routes->group('toko', function ($routes) {
+	// 	$routes->get('', 'TokoDistributorController::index', ['filter' => 'distributor']);
+	// 	$routes->post('', 'TokoDistributorController::create', ['filter' => 'distributor']);
+	// 	$routes->delete('(:segment)', 'TokoDistributorController::delete/$1', ['filter' => 'distributor']);
+	// });
 	$routes->group('transaksi', function ($routes) {
-		$routes->get('', 'TransaksiPenjualanDistributorController::index', ['filter' => 'distributor']);
-		$routes->post('', 'TransaksiPenjualanDistributorController::create', ['filter' => 'distributor']);
+		// $routes->get('', 'TransaksiPenjualanDistributorController::index', ['filter' => 'distributor']);
+		// $routes->post('', 'TransaksiPenjualanDistributorController::create', ['filter' => 'distributor']);
 		$routes->post('(:segment)/pelunasan', 'TransaksiPenjualanDistributorController::pelunasan/$1', ['filter' => 'distributor']);
 	});
+	$routes->resource('transaksi', ['filter' => 'distributor', 'only' => ['index', 'create', 'update'], 'controller' => 'TransaksiPenjualanDistributorController']);
 });
 
 $routes->group('toko', function ($routes) {

@@ -40,6 +40,17 @@ class BarangDistributorModel extends Model
 
     public function getLastId()
     {
-        return $this->db->insertID();
+        return $this->insertID();
+    }
+    public function is_using($params = [])
+    {
+        $builder = $this->db->table($this->table);
+        $builder->where($params['where']);
+        $data = $builder->get()->getResultArray();
+        if ($data) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
