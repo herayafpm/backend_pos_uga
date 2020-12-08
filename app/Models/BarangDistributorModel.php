@@ -37,6 +37,19 @@ class BarangDistributorModel extends Model
         }
         return $query;
     }
+    public function totalAset()
+    {
+        $builder = $this->db->table($this->table);
+        $builder->select("harga_jual,stok");
+        $query = $builder->get()->getResultArray();
+        $total = 0;
+        if ($query) {
+            foreach ($query as $q) {
+                $total += $q['harga_jual'] * $q['stok'];
+            }
+        }
+        return $total;
+    }
 
     public function getLastId()
     {

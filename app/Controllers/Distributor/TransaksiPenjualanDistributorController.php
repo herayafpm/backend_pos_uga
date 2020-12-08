@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Distributor;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\PenjualanDistributorModel;
@@ -15,7 +15,16 @@ class TransaksiPenjualanDistributorController extends ResourceController
 
   public function index()
   {
-    $transaksis = $this->model->getTransasksi();
+    $dataGet = $this->request->getGet();
+    $limit = $dataGet["limit"] ?? 10;
+    $offset = $dataGet["offset"] ?? 0;
+    $orderby = $dataGet["orderby"] ?? 'id';
+    $ordered = $dataGet["ordered"] ?? 'desc';
+    $params = [];
+    if (isset($dataGet['toko_id']) && !empty($dataGet['toko_id'])) {
+      $params['where'] = ['toko_id' => $dataGet['toko_id']];
+    }
+    $transaksis = $this->model->filter($limit, $offset, $orderby, $ordered, $params);
     return $this->respond(["status" => 1, "message" => "berhasil mengambil transaksi", "data" => $transaksis], 200);
   }
 
@@ -32,6 +41,7 @@ class TransaksiPenjualanDistributorController extends ResourceController
       $barangTokoModel = new BarangTokoModel();
       $barangDistributorModel = new BarangDistributorModel();
       foreach ($dataJson->barang as $barang) {
+        $b = $barangDistributorModel->where('id', $barang->id)->get()->getRow();
         $dataPenjualan = [
           'transaksi_penjualan_distributor_id' => $transaksi_id,
           'barang_distributor_id' => $barang->id,
@@ -43,16 +53,21 @@ class TransaksiPenjualanDistributorController extends ResourceController
         $jumlahBarang = $barang->jumlah_barang;
         $barangToko = $barangTokoModel->where('barang_distributor_id', $barang->id)->get()->getRow();
         if ($barangToko) {
-          $stok = (int) $barangToko->stok + (int) $jumlahBarang;
+          if ($jumlahBarang < 0) {
+            $stok = (int) $barangToko->stok - (int) $jumlahBarang;
+          } else {
+            $stok = (int) $barangToko->stok + (int) $jumlahBarang;
+          }
           $barangTokoModel->where('id', $barangToko->id)->set(['stok' => $stok])->update();
         } else {
-          $barang = $barangDistributorModel->where('id', $barang->id)->get()->getRow();
+          $stok = (int) -$jumlahBarang;
           $dataToko = [
             'toko_id' => $dataJson->toko_id,
             'barang_distributor_id' => $barang->id,
+            'harga_dasar' => $barang->harga_jual,
             'harga_jual' => $barang->harga_jual,
-            'stok' => $jumlahBarang,
-            'keterangan' => $barang->keterangan,
+            'stok' => $stok,
+            'keterangan' => $b->keterangan,
           ];
           $barangTokoModel->save($dataToko);
         }
@@ -60,7 +75,7 @@ class TransaksiPenjualanDistributorController extends ResourceController
       $totalHarga = $penjualanModel->getTotalHarga($transaksi_id);
       $update = $this->model->where('id', $transaksi_id)->set(['total_bayar' => $totalHarga])->update();
       if ($update) {
-        $this->model->setStatus($transaksi_id, $dataJson->bayar ?? 0, $dataJson->keterangan ?? "Transaksi Awal");
+        $this->model->setStatus($transaksi_id, $dataJson->bayar ?? 0, $dataJson->keterangan ?? "Penjualan");
         return $this->respond(["status" => 1, "message" => "transaksi berhasil", "data" => []], 200);
       } else {
         $this->model->delete($transaksi_id);

@@ -1,4 +1,6 @@
-<?php namespace App\Filters;
+<?php
+
+namespace App\Filters;
 
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -10,25 +12,25 @@ class AuthApiFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         $response = service('response');
-        if(!$request->hasHeader('Authorization')){
+        if (!$request->hasHeader('Authorization')) {
             $response->setStatusCode(401);
-            $response->setBody(json_encode(["status" => 0,"message"=> "Unauthorized","data" => []]));
+            $response->setBody(json_encode(["status" => 0, "message" => "Unauthorized", "data" => []]));
             $response->setHeader('Content-type', 'application/json');
             return $response;
         }
         try {
             $config = config('App');
-            $jwt = explode("Bearer ",$request->getHeader('Authorization')->getValue())[1];
+            $jwt = explode("Bearer ", $request->getHeader('Authorization')->getValue())[1];
             $decoded = JWT::decode($jwt, $config->appJWTKey, array('HS256'));
             $userModel = new \App\Models\UserModel();
             $user = $userModel->getUserWithRole($decoded->username);
-            if((bool) $user->aktif == false){
+            if ((bool) $user->aktif == false) {
                 throw new \Exception("Akun anda belum aktif, silahkan kontak atasan");
             }
             $request->user = $user;
         } catch (\Exception $th) {
             $response->setStatusCode(401);
-            $response->setBody(json_encode(["status" => 0,"message"=> $th->getMessage(),"data" => []]));
+            $response->setBody(json_encode(["status" => 0, "message" => $th->getMessage(), "data" => []]));
             $response->setHeader('Content-type', 'application/json');
             return $response;
         }

@@ -11,7 +11,7 @@ class TokoModel extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['user_id', 'nama_toko', 'email', 'alamat', 'no_telp', 'status'];
+    protected $allowedFields = ['user_id', 'token', 'nama_toko', 'email', 'alamat', 'no_telp', 'status'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
@@ -24,7 +24,7 @@ class TokoModel extends Model
         $builder->limit($limit, $start); // Untuk menambahkan query LIMIT
         $builder->select('toko.*');
         $builder->select('users.nama as pemilik_toko');
-        $builder->join('users', 'users.id = toko.user_id');
+        $builder->join('users', 'users.id = toko.user_id', 'LEFT');
         if (isset($params['where'])) {
             $builder->where($params['where']);
         }

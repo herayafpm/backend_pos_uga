@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class PenjualanDistributor extends Migration
+class PenjualanToko extends Migration
 {
 	public function up()
 	{
@@ -16,12 +16,12 @@ class PenjualanDistributor extends Migration
 				'unsigned'       => true,
 				'auto_increment' => true,
 			],
-			'transaksi_penjualan_distributor_id' => [
+			'transaksi_penjualan_toko_id' => [
 				'type' => 'INT',
 				'constraint'     => 11,
 				'unsigned'          => TRUE,
 			],
-			'barang_distributor_id' => [
+			'barang_toko_id' => [
 				'type' => 'INT',
 				'constraint'     => 11,
 				'unsigned'          => TRUE,
@@ -40,13 +40,13 @@ class PenjualanDistributor extends Migration
 			],
 		]);
 		$this->forge->addKey('id', true);
-		$this->forge->addForeignKey('transaksi_penjualan_distributor_id', 'transaksi_penjualan_distributor', 'id', 'CASCADE', 'CASCADE');
-		$this->forge->addForeignKey('barang_distributor_id', 'barang_distributor', 'id', 'CASCADE', 'CASCADE');
-		$this->forge->createTable('penjualan_distributor');
+		$this->forge->addForeignKey('transaksi_penjualan_toko_id', 'transaksi_penjualan_toko', 'id', 'CASCADE', 'CASCADE');
+		$this->forge->addForeignKey('barang_toko_id', 'barang_toko', 'id', 'CASCADE', 'CASCADE');
+		$this->forge->createTable('penjualan_toko');
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('penjualan_distributor');
+		$this->forge->dropTable('penjualan_toko');
 	}
 }

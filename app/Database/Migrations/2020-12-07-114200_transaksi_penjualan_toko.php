@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class BarangToko extends Migration
+class TransaksiPenjualanToko extends Migration
 {
 	public function up()
 	{
@@ -21,43 +21,34 @@ class BarangToko extends Migration
 				'constraint'     => 11,
 				'unsigned'          => TRUE,
 			],
-			'barang_distributor_id' => [
+			'karyawan_id' => [
 				'type' => 'INT',
 				'constraint'     => 11,
 				'unsigned'          => TRUE,
 			],
-			'stok'       => [
+			'total_bayar'       => [
 				'type' => 'INT',
-				'constraint'     => 11,
+				'constraint' => 11,
+				'default' => 0
 			],
-			'harga_dasar'       => [
+			'bayar'       => [
 				'type' => 'INT',
-				'constraint'     => 11,
-			],
-			'harga_jual'       => [
-				'type' => 'INT',
-				'constraint'     => 11,
-			],
-			'keterangan'       => [
-				'type' => 'TEXT',
+				'constraint' => 11,
+				'default' => 0
 			],
 			'created_at'       => [
 				'type'           => 'DATETIME',
 				'default' => date('Y-m-d H:i:s')
 			],
-			'updated_at'       => [
-				'type'           => 'DATETIME',
-				'default' => date('Y-m-d H:i:s')
-			],
 		]);
 		$this->forge->addKey('id', true);
-		$this->forge->addForeignKey('barang_distributor_id', 'barang_distributor', 'id');
-		$this->forge->addForeignKey('toko_id', 'toko', 'id', 'CASCADE', 'CASCADE');
-		$this->forge->createTable('barang_toko');
+		$this->forge->addForeignKey('karyawan_id', 'karyawan', 'id');
+		$this->forge->addForeignKey('toko_id', 'toko', 'id');
+		$this->forge->createTable('transaksi_penjualan_toko');
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('barang_toko');
+		$this->forge->dropTable('transaksi_penjualan_toko');
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Distributor;
 
 use CodeIgniter\RESTful\ResourceController;
 
@@ -266,17 +266,12 @@ class BarangDistributorController extends ResourceController
     $barang = $this->model->where('id', $id)->get()->getRow();
     if ($barang) {
       $riwayatStokBarangDistributorModel = new \App\Models\RiwayatStokBarangDistributorModel();
-      $deleteStok = $riwayatStokBarangDistributorModel->where('barang_id', $barang->id)->delete();
+      $deleteStok = $riwayatStokBarangDistributorModel->save(['stok_sekarang' => $barang->stok, 'stok_perubahan' => 0, 'barang_id' => $barang->id, 'keterangan' => "Penghapusan Barang"]);
       if ($deleteStok) {
-        $delete = $this->model->delete($id);
-        if ($delete) {
-          if ($barang->foto != 'kosong.png') {
-            unlink(FCPATH . $barang->foto);
-          }
-          return $this->respond(["status" => 1, "message" => "barang berhasil dihapus", "data" => []], 200);
-        } else {
-          return $this->respond(["status" => 0, "message" => "barang gagal dihapus", "data" => []], 400);
-        }
+        $this->model->update($barang->id, ['stok' => 0]);
+        return $this->respond(["status" => 1, "message" => "barang berhasil diubah stok menjadi 0", "data" => []], 200);
+      } else {
+        return $this->respond(["status" => 0, "message" => "barang gagal diubah stok menjadi 0", "data" => []], 400);
       }
     } else {
       return $this->respond(["status" => 0, "message" => "barang tidak ditemukan", "data" => []], 400);

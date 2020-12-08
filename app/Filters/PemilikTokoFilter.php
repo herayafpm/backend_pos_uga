@@ -1,4 +1,6 @@
-<?php namespace App\Filters;
+<?php
+
+namespace App\Filters;
 
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -13,11 +15,11 @@ class PemilikTokoFilter implements FilterInterface
         $response = service('response');
         helper('role');
         $cekAuth = isPemilikToko($request->user->role_id);
-        if(!$cekAuth){
-          return $response->setStatusCode(401)->setBody(json_encode(["status" => 0,"message"=>"unauthorized","data" => []]))->setHeader('Content-type', 'application/json');
-        }else{
+        if (!$cekAuth) {
+            return $response->setStatusCode(401)->setBody(json_encode(["status" => 0, "message" => "Unauthorized", "data" => []]))->setHeader('Content-type', 'application/json');
+        } else {
             $tokoModel = new TokoModel();
-            $request->toko = $tokoModel->where('user_id',$request->user->id)->first();
+            $request->toko = $tokoModel->where('user_id', $request->user->id)->first();
         }
     }
 

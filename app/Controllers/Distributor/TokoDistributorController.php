@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Distributor;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\UserModel;
@@ -21,7 +21,14 @@ class TokoDistributorController extends ResourceController
     $orderby = $dataGet["orderby"] ?? 'id';
     $ordered = $dataGet["ordered"] ?? 'desc';
     $tokos = $this->model->filter($search, $limit, $offset, $orderby, $ordered);
-    return $this->respond(["status" => 1, "message" => "berhasil mengambil data toko", "data" => $tokos], 200);
+    $datas = [];
+    $transaksiModel = new TransaksiPenjualanDistributorModel();
+    foreach ($tokos as $toko) {
+      $transaksi = $transaksiModel->where(['toko_id' => $toko['id'], 'status' => 0])->first();
+      $toko['utang'] = ($transaksi) ? 1 : 0;
+      array_push($datas, $toko);
+    }
+    return $this->respond(["status" => 1, "message" => "berhasil mengambil data toko", "data" => $datas], 200);
   }
 
   public function create()

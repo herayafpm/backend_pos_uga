@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Toko;
 
 use CodeIgniter\RESTful\ResourceController;
 
@@ -13,6 +13,20 @@ class TokoController extends ResourceController
   public function index()
   {
     return $this->respond(["status" => 1, "message" => "berhasil mengambil data toko", "data" => $this->request->toko], 200);
+  }
+  public function updatetoken()
+  {
+    $toko = $this->request->toko;
+    $dataJson = $this->request->getJson();
+    $data = [
+      'token' => htmlspecialchars($dataJson->token ?? ''),
+    ];
+    $update = $this->model->update($toko['id'], $data);
+    if ($update) {
+      return $this->respond(["status" => 1, "message" => "token toko berhasil diubah", "data" => []], 200);
+    } else {
+      return $this->respond(["status" => 0, "message" => "token toko gagal diubah", "data" => []], 400);
+    }
   }
 
   public function updatetoko()

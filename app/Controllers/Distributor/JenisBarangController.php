@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Distributor;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\BarangDistributorModel;

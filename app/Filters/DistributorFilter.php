@@ -1,4 +1,6 @@
-<?php namespace App\Filters;
+<?php
+
+namespace App\Filters;
 
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -12,8 +14,8 @@ class DistributorFilter implements FilterInterface
         $response = service('response');
         helper('role');
         $cekAuth = isDistributor($request->user->role_id);
-        if(!$cekAuth){
-          return $response->setStatusCode(401)->setBody(json_encode(["status" => 0,"message"=>"unauthorized","data" => []]))->setHeader('Content-type', 'application/json');
+        if (!$cekAuth) {
+            return $response->setStatusCode(401)->setBody(json_encode(["status" => 0, "message" => "Unauthorized", "data" => []]))->setHeader('Content-type', 'application/json');
         }
     }
 
